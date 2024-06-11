@@ -1,26 +1,27 @@
 {% extends 'base.html' %}
 
 {% block title %}
-Регистрация
+Account
 {% endblock %}
 
 {% block content %}
-<h1>Регистрация</h1>
-    <form method="POST" action="{{ url_for('register') }}">
+<h1>Это страница вашего аккаунта</h1>
+<h2>Редактировать профиль</h2>
+    <form method="POST" action="{{ url_for('account') }}">
         {{ form.hidden_tag() }}
         <div>
             {{ form.username.label }}<br>
             {{ form.username(size=32) }}<br>
-             {% for error in form.username.errors %}
+            {% for error in form.username.errors %}
                     <span style="color: red;">{{ error }}</span><br>
-             {% endfor %}
+            {% endfor %}
         </div>
         <div>
             {{ form.email.label }}<br>
             {{ form.email(size=32) }}<br>
-             {% for error in form.email.errors %}
+            {% for error in form.email.errors %}
                     <span style="color: red;">{{ error }}</span><br>
-             {% endfor %}
+            {% endfor %}
         </div>
         <div>
             {{ form.password.label }}<br>
